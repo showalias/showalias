@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alias Replacer</title>
+  <script src="popup.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      font-size: medium;
+      font-family: Arial, sans-serif;
+    }
+
+    #add-section {
+      background-color: #733708;
+      color: #e9785f;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    #alias-name,
+    #alias-value {
+      flex: 1;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: medium;
+      box-sizing: border-box;
+    }
+
+    #add-button {
+      padding: 10px;
+      background-color: rgba(234, 197, 100, 1);
+      color: rgba(50, 30, 10, 1);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #add-button:hover {
+      background-color: rgba(244, 217, 130, 1);
+    }
+
+    #alias-list {
+      list-style-type: none;
+      background-color: #1a655c;
+      color: white;
+      padding: 20px;
+      margin: 0;
+    }
+
+    #alias-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+    }
+
+    #alias-list button {
+      padding: 5px 10px;
+      background-color: rgba(234, 197, 100, 1);
+      color: rgba(50, 30, 10, 1);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #alias-list button:hover {
+      background-color: rgba(244, 217, 130, 1);
+    }
+
+    @media (max-width: 600px) {
+      #add-section {
+        flex-direction: column;
+      }
+
+      #alias-name,
+      #alias-value {
+        width: 100%;
+      }
+
+      #add-button {
+        width: 100%;
+      }
+
+      #alias-list li {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      #alias-list button {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="add-section">
+    <input id="alias-name" type="text" autofocus placeholder="Alias Name" />
+    <input id="alias-value" type="text" placeholder="Alias Value" />
+    <button id="add-button" title="Add Alias">&#10133;</button>
+  </div>
+  <ul id="alias-list">
+    <li>
+      Example Alias
+      <button>Delete</button>
+    </li>
+  </ul>
+</body>
+</html>
+
